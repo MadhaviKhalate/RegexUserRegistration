@@ -7,7 +7,7 @@ namespace RegexUserRegistration
         public static void Main(string[] args)
         {
             Console.WriteLine("1.Validate First Name \n2.Validate Last Name \n3.Validate Email" +
-                "\n4.validate mobile number");
+                "\n4.validate mobile number \n5.Validate password");
             Console.WriteLine("Enter your option");
             int option = Convert.ToInt32(Console.ReadLine());
             RegExp regex = new RegExp();
@@ -36,6 +36,12 @@ namespace RegexUserRegistration
                     Console.WriteLine("Enter Mobile Number");
                     string mobile = Console.ReadLine();
                     regex.RegexMobileNo(mobile);
+                    break;
+
+                case 5:
+                    Console.WriteLine("Enter your password");
+                    string password = Console.ReadLine();
+                    regex.RegexPassword(password);
                     break;
 
                 default:
