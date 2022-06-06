@@ -14,6 +14,8 @@ namespace RegexUserRegistration
         const string email = "^[0-9a-z]{1,}([.+-_]*)[0-9a-z]{1,}(@)(gmail|bl)(.)(com|co)([.]*)([in]*)$";
         const string mobileNo = "^([+]*)(91 )[6-9]{1}[0-9]{9}$";
         const string password = "^[0-9A-Za-z]{8,}$";
+        const string password1 = "^(?=.*[A-Z]).{8,}$";
+
         public void RegexFirstName(string firstName)
         {
             if (Regex.IsMatch(firstName, fname))
@@ -56,12 +58,12 @@ namespace RegexUserRegistration
 
         public void RegexPassword(string pwd)
         {
-            if (Regex.IsMatch(pwd, password))
+            if (Regex.IsMatch(pwd, password1))
             {
-                Console.WriteLine("Password is valid");
+                Console.WriteLine("Your Password is Valid");
                 return;
             }
-            Console.WriteLine("Password in not valid");
+            Console.WriteLine("Your Password is not Valid");
         }
     }
 }
