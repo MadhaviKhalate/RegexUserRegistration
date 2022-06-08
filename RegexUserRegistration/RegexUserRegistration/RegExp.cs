@@ -17,7 +17,7 @@ namespace RegexUserRegistration
         //const string password2 = "^(?=.*[A-Z]).{8,}$";        /should have at least 1 upper case
         //const string password3 = "^(?=.*[0-9])(?=.*[A-Z]).{8,}$"; //should have at least 1 numeric value
         const string password4 = "^[a-z A-Z 0-9]{1,}[A-Z]{1,}[a-z A-Z 0-9]{1,}[!*@#$%^&+=]?[a-z A-Z 0-9]{1,}[0-9]{1,}[a-z A-Z 0-9]{1,}$";
-
+        const string sample = "^[0-9A-Za-z]+([._+-][0-9A-Za-z]+)*[@][0-9A-Za-z]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
 
 
         public void RegexFirstName(string firstName)
@@ -68,6 +68,16 @@ namespace RegexUserRegistration
                 return;
             }
             Console.WriteLine("Your Password is not Valid");
+        }
+
+        public void RegexSampleMail(string SAMPLE)
+        {
+            if (Regex.IsMatch(SAMPLE, sample))
+            {
+                Console.WriteLine("Your Email is Valid");
+                return;
+            }
+            Console.WriteLine("Your Email is not Valid");
         }
     }
 }
