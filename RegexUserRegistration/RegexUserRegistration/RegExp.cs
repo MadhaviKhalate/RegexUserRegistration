@@ -13,9 +13,11 @@ namespace RegexUserRegistration
         const string lname = "^[A-Z]{1}[a-z]{2,}$";
         const string email = "^[0-9a-z]{1,}([.+-_]*)[0-9a-z]{1,}(@)(gmail|bl)(.)(com|co)([.]*)([in]*)$";
         const string mobileNo = "^([+]*)(91 )[6-9]{1}[0-9]{9}$";
-        //const string password = "^[0-9A-Za-z]{8,}$";          /minimum 8 charactor
-        //const string password1 = "^(?=.*[A-Z]).{8,}$";        /should have at least 1 upper case
-        const string password2 = "^(?=.*[0-9])(?=.*[A-Z]).{8,}$";
+        //const string password1 = "^[0-9A-Za-z]{8,}$";          /minimum 8 charactor
+        //const string password2 = "^(?=.*[A-Z]).{8,}$";        /should have at least 1 upper case
+        //const string password3 = "^(?=.*[0-9])(?=.*[A-Z]).{8,}$"; //should have at least 1 numeric value
+        const string password4 = "^[a-z A-Z 0-9]{1,}[A-Z]{1,}[a-z A-Z 0-9]{1,}[!*@#$%^&+=]?[a-z A-Z 0-9]{1,}[0-9]{1,}[a-z A-Z 0-9]{1,}$";
+
 
 
         public void RegexFirstName(string firstName)
@@ -60,7 +62,7 @@ namespace RegexUserRegistration
 
         public void RegexPassword(string pwd)
         {
-            if (Regex.IsMatch(pwd, password2))
+            if (Regex.IsMatch(pwd, password4))
             {
                 Console.WriteLine("Your Password is Valid");
                 return;
