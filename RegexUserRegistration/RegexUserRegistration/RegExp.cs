@@ -20,64 +20,70 @@ namespace RegexUserRegistration
         const string sample = "^[0-9A-Za-z]+([._+-][0-9A-Za-z]+)*[@][0-9A-Za-z]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
 
 
-        public void RegexFirstName(string firstName)
+        public string RegexFirstName(string firstName)
         {
             if (Regex.IsMatch(firstName, fname))
             {
                 Console.WriteLine("First name is valid");
-                return;
+                return "Valid";
             }
             Console.WriteLine("First name is not valid");
+            return "Invalid";
         }
 
-        public void RegexLastName(string lastName)
+        public string RegexLastName(string lastName)
         {
             if (Regex.IsMatch(lastName, lname))
             {
                 Console.WriteLine("Last name is valid");
-                return;
+                return "Valid";
             }
             Console.WriteLine("Last name is not valid");
+            return "Invalid";
         }
 
-        public void RegexEmail(string Email)
+        public string RegexEmail(string Email)
         {
             if (Regex.IsMatch(Email, email))
             {
                 Console.WriteLine("Email is valid");
-                return;
+                return "Valid";
             }
             Console.WriteLine("Email is not valid");
+            return "Invalid";
         }
 
-        public void RegexMobileNo(string mobNo)
+        public string RegexMobileNo(string mobNo)
         {
             if (Regex.IsMatch(mobNo, mobileNo))
             {
                 Console.WriteLine("Mobile number is valid");
-                return;
+                return "Valid";
             }
             Console.WriteLine("Mobile number is not valid");
+            return "Invalid";
         }
 
-        public void RegexPassword(string pwd)
+        public string RegexPassword(string pwd)
         {
             if (Regex.IsMatch(pwd, password4))
             {
                 Console.WriteLine("Your Password is Valid");
-                return;
+                return "Valid";
             }
             Console.WriteLine("Your Password is not Valid");
+            return "Invalid";
         }
 
-        public void RegexSampleMail(string SAMPLE)
+        public string RegexSampleMail(string SAMPLE)
         {
             if (Regex.IsMatch(SAMPLE, sample))
             {
                 Console.WriteLine("Your Email is Valid");
-                return;
+                return "Valid";
             }
             Console.WriteLine("Your Email is not Valid");
+            return "Invalid";
         }
     }
 }
