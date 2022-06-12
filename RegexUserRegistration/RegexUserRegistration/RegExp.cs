@@ -22,8 +22,9 @@ namespace RegexUserRegistration
         public string RegexFirstName()
         {
             const string fname = "^[A-Z]{1}[a-z]{2,}$";
+            Func<string, bool> result = (input) => (Regex.IsMatch(input, fname));
 
-            if (Regex.IsMatch(input, fname))
+            if (result(input))
             {
                 Console.WriteLine("First name is valid");
                 return "Valid";
@@ -38,8 +39,9 @@ namespace RegexUserRegistration
         public string RegexLastName()
         {
             const string lname = "^[A-Z]{1}[a-z]{2,}$";
+            Func<string, bool> result = (input) => (Regex.IsMatch(input, lname));
 
-            if (Regex.IsMatch(input, lname))
+            if (result(input))
             {
                 Console.WriteLine("Last name is valid");
                 return "Valid";
@@ -70,8 +72,9 @@ namespace RegexUserRegistration
         public string RegexMobileNo()
         {
             const string mobileNo = "^([+]*)(91 )[6-9]{1}[0-9]{9}$";
+            Func<string, bool> result = (input) => (Regex.IsMatch(input, mobileNo));
 
-            if (Regex.IsMatch(input, mobileNo))
+            if (result(input))
             {
                 Console.WriteLine("Mobile number is valid");
                 return "Valid";
@@ -86,8 +89,9 @@ namespace RegexUserRegistration
         public string RegexPassword()
         {
             const string password4 = "^[a-z A-Z 0-9]{1,}[A-Z]{1,}[a-z A-Z 0-9]{1,}[!*@#$%^&+=]?[a-z A-Z 0-9]{1,}[0-9]{1,}[a-z A-Z 0-9]{1,}$";
+            Func<string, bool> result = (input) => (Regex.IsMatch(input, password4));
 
-            if (Regex.IsMatch(input, password4))
+            if (result(input))
             {
                 Console.WriteLine("Your Password is Valid");
                 return "Valid";
@@ -102,8 +106,9 @@ namespace RegexUserRegistration
         public string RegexSampleMail()
         {
             const string sample = "^[0-9A-Za-z]+([._+-][0-9A-Za-z]+)*[@][0-9A-Za-z]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
+            Func<string, bool> result = (input) => (Regex.IsMatch(input, sample));
 
-            if (Regex.IsMatch(input, sample))
+            if (result(input))
             {
                 Console.WriteLine("Your Email is Valid");
                 return "Valid";
