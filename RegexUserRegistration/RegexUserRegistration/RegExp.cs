@@ -28,8 +28,11 @@ namespace RegexUserRegistration
                 Console.WriteLine("First name is valid");
                 return "Valid";
             }
-            Console.WriteLine("First name is not valid");
-            return "Invalid";
+            else
+            {
+               Console.WriteLine("Your First Name is Invalid...Name should start with Caps and have atleast 3 characters");
+               throw new CustomException(CustomException.ExceptionType.INVALID_FIRSTNAME, "Invalid Name");
+            }
         }
 
         public string RegexLastName()
@@ -41,8 +44,11 @@ namespace RegexUserRegistration
                 Console.WriteLine("Last name is valid");
                 return "Valid";
             }
-            Console.WriteLine("Last name is not valid");
-            return "Invalid";
+            else
+            {
+                Console.WriteLine("Your Last Name is Invalid...Name should start with Caps and have atleast 3 characters");
+                throw new CustomException(CustomException.ExceptionType.INVALID_LASTNAME, "Invalid Name");
+            }
         }
 
         public string RegexEmail()
@@ -54,8 +60,11 @@ namespace RegexUserRegistration
                 Console.WriteLine("Email is valid");
                 return "Valid";
             }
-            Console.WriteLine("Email is not valid");
-            return "Invalid";
+            else
+            {
+                Console.WriteLine(input + " - is Invalid");
+                throw new CustomException(CustomException.ExceptionType.INVALID_EMAIL, "Invalid Email");
+            }
         }
 
         public string RegexMobileNo()
@@ -67,8 +76,11 @@ namespace RegexUserRegistration
                 Console.WriteLine("Mobile number is valid");
                 return "Valid";
             }
-            Console.WriteLine("Mobile number is not valid");
-            return "Invalid";
+            else
+            {
+                Console.WriteLine("Your Phone Number not is Valid");
+                throw new CustomException(CustomException.ExceptionType.INVALID_NUMBER, "Invalid PhoneNumber");
+            }
         }
 
         public string RegexPassword()
@@ -80,8 +92,11 @@ namespace RegexUserRegistration
                 Console.WriteLine("Your Password is Valid");
                 return "Valid";
             }
-            Console.WriteLine("Your Password is not Valid");
-            return "Invalid";
+            else
+            {
+                Console.WriteLine("Your Password is not Valid");
+                throw new CustomException(CustomException.ExceptionType.INVALID_PASSWORD, "Invalid Password");
+            }
         }
 
         public string RegexSampleMail()
@@ -93,8 +108,11 @@ namespace RegexUserRegistration
                 Console.WriteLine("Your Email is Valid");
                 return "Valid";
             }
-            Console.WriteLine("Your Email is not Valid");
-            return "Invalid";
+            else
+            {
+                Console.WriteLine(input + " - is Invalid");
+                throw new CustomException(CustomException.ExceptionType.INVALID_EMAIL, "Invalid Email");
+            }
         }
     }
 }

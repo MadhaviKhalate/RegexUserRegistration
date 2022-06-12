@@ -3,39 +3,84 @@ namespace RegexUserRegistration
     public class Tests
     {
         [Test]
-        public void GetFirstName_CheckRegexPattern_ReturnResult()
+        public void GetInvalidFirstName_checkRegexPattern_ShouldThrowInvalidNameException()
         {
-            string fn = "Madhavi";
-            RegExp regex = new RegExp(fn);
-            Assert.AreEqual("Valid", regex.RegexFirstName());
+            try
+            {
+                string firstName = "madhavi12";
+                string excepted = "Valid";
+                RegExp regexp = new RegExp(firstName);
+                string actual = regexp.RegexFirstName();
+                excepted.Equals(actual);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Invalid Name", ex.Message);
+            }
         }
         [Test]
-        public void GetLastName_CheckRegexPattern_ReturnResult()
+        public void GetInvalidLastName_checkRegexPattern_ShouldThrowInvalidNameException()
         {
-            string ln = "Khalate";
-            RegExp regex = new RegExp(ln);
-            Assert.AreEqual("Valid", regex.RegexLastName());
+            try
+            {
+                string lastName = "khalate211";
+                string excepted = "Valid";
+                RegExp regexp = new RegExp(lastName);
+                string actual = regexp.RegexLastName();
+                excepted.Equals(actual);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Invalid Name", ex.Message);
+            }
         }
         [Test]
-        public void GetEmail_CheckRegexPattern_ReturnResult()
+        public void GetInvalidEmail_checkRegexPattern_ShouldThrowInvalidEmailException()
         {
-            string emailID = "abc.100@abc.com";
-            RegExp regex = new RegExp(emailID);
-            Assert.AreEqual("Valid", regex.RegexSampleMail());
+            try
+            {
+                string email = "abc@abc@bl.com";
+                string excepted = "Valid";
+                RegExp regexp = new RegExp(email);
+                string actual = regexp.RegexEmail();
+                excepted.Equals(actual);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Invalid Email", ex.Message);
+            }
         }
         [Test]
-        public void GetPhoneNumber_CheckRegexPattern_ReturnResult()
+        public void GetInvalidPhoneNumber_CheckRegexPattern_ShouldThrowInvalidNumberException()
         {
-            string mob = "91 8998663264";
-            RegExp regex = new RegExp(mob);
-            Assert.AreEqual("Valid", regex.RegexMobileNo());
+            try
+            {
+                string number = "837356323762";
+                string excepted = "Valid";
+                RegExp regexp = new RegExp(number);
+                string actual = regexp.RegexMobileNo();
+                excepted.Equals(actual);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Invalid PhoneNumber", ex.Message);
+            }
         }
         [Test]
-        public void GetPassword_CheckRegexPattern_ReturnResult()
+        public void GetInvalidPassword_CheckRegexPattern_ShouldThrowInvalidPasswordException()
         {
-            string pwd = "abCd#123abc";
-            RegExp regex = new RegExp(pwd);
-            Assert.AreEqual("Valid", regex.RegexPassword());
+            try
+            {
+                string password = "abcd@123#";
+                string excepted = "Valid";
+                RegExp regexp = new RegExp(password);
+                string actual = regexp.RegexPassword();
+                excepted.Equals(actual);
+            }
+            catch (Exception ex)
+            {
+                Assert.AreEqual("Invalid Password", ex.Message);
+            }
         }
     }
 }
